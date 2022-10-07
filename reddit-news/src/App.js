@@ -1,6 +1,7 @@
-import { Box, TextField, Typography } from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
 import NewsCard from "./NewsCard";
-
+import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 /**
  * @file App.js
  * @author Devin Arena
@@ -29,7 +30,14 @@ const App = () => {
               Compare news sources of two subreddits.
             </Typography>
           </Box>
-          <Box sx={{ ml: 2 }}></Box>
+          <Box sx={{ mx: 2, display: "flex", flexDirection: "column", justifyContent: "space-evenly" }}>
+            <Button variant="outlined"> 
+              <ArrowRightAltIcon /> 
+            </Button>
+            <Button variant="outlined">
+              <DarkModeIcon/>
+            </Button>
+          </Box>
         </Box>
 
         <Box
