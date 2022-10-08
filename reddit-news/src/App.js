@@ -12,7 +12,7 @@ import NewsCard from "./NewsCard";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { darkTheme, lightTheme } from "./Theme";
 
 /**
@@ -26,10 +26,15 @@ const App = () => {
   const MAX_POSTS = 100;
   const MIN_POSTS = 1;
 
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("");
+
+  useEffect(() => {
+    setTheme(localStorage.getItem("theme") || "dark");
+  }, []);
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
+    localStorage.setItem("theme", theme === "dark" ? "light" : "dark");
   };
 
   const getTheme = () => {

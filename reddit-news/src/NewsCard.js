@@ -8,7 +8,6 @@
 import { Box, Button, Link, Typography, useTheme } from "@mui/material";
 import RedditIcon from "@mui/icons-material/Reddit";
 import LaunchIcon from "@mui/icons-material/Launch";
-import { useEffect } from "react";
 
 const NewsCard = (props) => {
   const theme = useTheme();
@@ -54,7 +53,7 @@ const NewsCard = (props) => {
         <Button
           variant="outlined"
           color="secondary"
-          sx={{ py: 1.75 , mx: { xs: 0.5, sm: 1 } }}
+          sx={{ py: 1.75, mx: { xs: 0.5, sm: 1 } }}
           href={props.news.reddit_url}
         >
           <RedditIcon sx={{ fontSize: { xs: 20, sm: 32 } }} />
