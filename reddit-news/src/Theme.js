@@ -1,5 +1,12 @@
 import { createTheme } from "@mui/material";
 
+/**
+ * @file Theme.js
+ * @author Devin Arena
+ * @description Stores theme information for the app.
+ * @since 10/7/2022
+ **/
+
 const lightTheme = createTheme({
   palette: {
     mode: "light",

@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   CssBaseline,
+  Link,
   TextField,
   ThemeProvider,
   Typography,
@@ -48,10 +49,12 @@ const App = () => {
   const loadArticles = () => {
     setErrorText("");
     let error = false;
+    // we'll just require the first sub, though the tool assumes you're comparing
     if (!subA) {
       setErrorText((errorText) => errorText + "Subreddit A is required.\n");
       error = true;
     }
+    // validate post number
     if (numPosts > MAX_POSTS || numPosts < MIN_POSTS) {
       setErrorText(
         (errorText) =>
@@ -62,6 +65,8 @@ const App = () => {
     }
 
     if (error) return;
+
+    // fetch posts from subreddit A
 
     fetch(`https://www.reddit.com/r/${subA}/hot.json?limit=${numPosts}`).then(
       (res) => {
@@ -86,6 +91,8 @@ const App = () => {
         });
       }
     );
+
+    // fetch posts from subreddit B
 
     if (subB) {
       fetch(`https://www.reddit.com/r/${subB}/hot.json?limit=${numPosts}`).then(
@@ -152,6 +159,16 @@ const App = () => {
               >
                 Compare news sources of two subreddits.
               </Typography>
+              <Typography
+                variant="h3"
+                sx={{ fontSize: { xs: 16, sm: 20, md: 24 } }}
+              >
+                Fast, simple, and{" "}
+                <Link href="https://github.com/devinarena/RNCT">
+                  open-source
+                </Link>
+                .
+              </Typography>
             </Box>
             <Box
               sx={{
@@ -183,7 +200,7 @@ const App = () => {
                   {theme === "dark" ? <LightModeIcon /> : <DarkModeIcon />}
                 </Button>
               </Box>
-              <Box sx={{ mt: 1 }}>
+              <Box sx={{ mt: 1.5 }}>
                 <TextField
                   label="Number of Posts"
                   type="number"
