@@ -138,6 +138,7 @@ const App = () => {
           justifyContent: "start",
           alignItems: "center",
           minHeight: "100vh",
+          maxWidth: "container.md",
         }}
       >
         <Box
@@ -192,14 +193,14 @@ const App = () => {
               >
                 <Button
                   variant="contained"
-                  sx={{ p: 2, mx: 1 }}
+                  sx={{ p: 2, mx: 0.5 }}
                   onClick={loadArticles}
                 >
                   <PlayArrowIcon />
                 </Button>
                 <Button
                   variant="contained"
-                  sx={{ p: 2, mx: 1 }}
+                  sx={{ p: 2, mx: 0.5 }}
                   onClick={toggleTheme}
                 >
                   {theme === "dark" ? <LightModeIcon /> : <DarkModeIcon />}
@@ -238,6 +239,7 @@ const App = () => {
             <Box
               sx={{
                 flex: 1,
+                maxWidth: "50%",
                 mr: { xs: 0.5, sm: 2 },
                 border: getTheme().palette.border,
                 p: { xs: 1, sm: 2 },
@@ -275,6 +277,7 @@ const App = () => {
                 ml: { xs: 0.5, sm: 2 },
                 border: getTheme().palette.border,
                 p: { xs: 1, sm: 2 },
+                maxWidth: "50%",
               }}
             >
               <Typography variant="h6" sx={{ fontSize: { xs: 18, sm: 24 } }}>

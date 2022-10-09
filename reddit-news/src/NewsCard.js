@@ -24,7 +24,9 @@ const NewsCard = (props) => {
       }}
     >
       <Link href={`https://reddit.com/r/${props.news.subreddit}`}>
-        <Typography variant="h6">r/{props.news.subreddit}</Typography>
+        <Typography variant="h6" sx={{ fontSize: { xs: 16, sm: 24 } }}>
+          r/{props.news.subreddit}
+        </Typography>
       </Link>
       <Typography
         variant="h6"
